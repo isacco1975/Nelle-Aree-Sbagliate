@@ -480,10 +480,12 @@ Sub ReadObj() Static
               Print "  dopo aver letto la lettera, realizzi"
               Print "  che la stanchezza sta prevalendo e"
               Print "  decidi di andare a dormire..."
-              Print "  ti risvegli dopo 30 minuti nella"
-              Print "  tua stanza."
+              Print "  rimetti la lettera al suo posto,"
+              Print "  ti concedi un breve riposo."
               position = 11
               letterRead = 1
+              objects(5) = inventory(idx)
+              inventory(idx) = ""
               Exit For
            End If
        Next
@@ -532,9 +534,9 @@ End Sub
 ' -------------------------------------------------------------
 
 Sub ExamineOffice() Static
-    Print ""
-    Poke 646,3: Print "  sei seduto alla tua scrivania."
-    Poke 646,3: Print "  sulla scrivania vedi anche:"
+    Print "": Poke 646,3
+    Print "  sei seduto alla tua scrivania."
+    Print "  sulla scrivania vedi anche:"
 
     Print ""
     For idx As byte = 0 To 2
@@ -546,17 +548,17 @@ End Sub
 ' -------------------------------------------------------------
 
 Sub ExamineHall() Static
-    Print ""
-    Poke 646,3: Print "  intravedi a nord una luce"
-    Poke 646,3: Print "  verso la scala che conduce"
-    Poke 646,3: Print "  al piano inferiore dell'edificio"
+    Print "": Poke 646,3
+    Print "  intravedi a nord una luce"
+    Print "  verso la scala che conduce"
+    Print "  al piano inferiore dell'edificio"
 End Sub
 ' -------------------------------------------------------------
 
 Sub ExamineRestRooms() Static
-    Print ""
-    Poke 646,3: Print "  un rotolo di carta igienica e'"
-    Poke 646,3: Print "  correttamente posizionato per terra."
+    Print "": Poke 646,3
+    Print "  un rotolo di carta igienica e'"
+    Print "  correttamente posizionato per terra."
 
     If objects(7) <> "" Then
        Poke 646,3: Print "  guardando con piu' attenzione, sotto"
@@ -574,26 +576,26 @@ End Sub
 ' -------------------------------------------------------------
 
 Sub ExamineInsideServerRooms() Static
-    Print ""
-    Poke 646,3: Print "  solo un paio di server rumorosi"
-    Poke 646,3: Print "  e tanti led lampeggianti.."
-    Poke 646,3: Print "  niente di che.."
+    Print "": Poke 646,3
+    Print "  solo un paio di server rumorosi"
+    Print "  e tanti led lampeggianti.."
+    Print "  niente di che.."
 End Sub
 ' -------------------------------------------------------------
 
 Sub ExamineWindow() Static
-    Print ""
-    Poke 646,3: Print "  fuori e' buio."
-    Poke 646,3: Print "  non vedi altro."
+    Print "": poke 646,3
+    Print "  fuori e' buio."
+    Print "  non vedi altro."
 End Sub
 ' -------------------------------------------------------------
 
 Sub ExamineParking() Static
-    Print ""
-    Poke 646,3: Print "  vedi la tua automobile solitaria."
-    Poke 646,3: Print "  non c'e' altro. solo il silenzio "
-    Poke 646,3: Print "  interrotto solo dal calpestio della"
-    Poke 646,3: Print "  ghiaia, e ad est vedi la"
+    Print "": Poke 646,3
+    Print "  vedi la tua automobile solitaria."
+    Print "  non c'e' altro. solo il silenzio "
+    Print "  interrotto solo dal calpestio della"
+    Print "  ghiaia, e ad est vedi la"
     Poke 646,7: Print "  <porta di ingresso all'azienda>"
     Poke 646,3: Print "  ed a nord vedi la tua"
     Poke 646,7: Print "  <automobile>"
@@ -617,19 +619,19 @@ End Sub
 ' -------------------------------------------------------------
 
 Sub ExamineBathroom() Static
-    Print ""
-    Poke 646,3: Print "  la bomboletta di schiuma da barba"
-    Poke 646,3: Print "  giace sul lavabo."
-    Poke 646,3: Print "  un profumo di agrumi avvolge l'"
-    Poke 646,3: Print "  intera stanza."
+    Print "": Poke 646,3
+    Print "  la bomboletta di schiuma da barba"
+    Print "  giace sul lavabo."
+    Print "  un profumo di agrumi avvolge l'"
+    Print "  intera stanza."
 End Sub
 ' -------------------------------------------------------------
 
 Sub ExamineSquareRoom() Static
-    Print ""
-    Poke 646,3: Print " {rev_on} c'e' una enorme porta di ferro"
-    Poke 646,3: Print " {rev_on} chiusa da un massiccio lucchetto"
-    Poke 646,3: Print " {rev_on} meccanico a combinazione."
+    Print "": Poke 646,3
+    Print " {rev_on} c'e' una enorme porta di ferro"
+    Print " {rev_on} chiusa da un massiccio lucchetto"
+    Print " {rev_on} meccanico a combinazione."
 End Sub
 ' -------------------------------------------------------------
 
