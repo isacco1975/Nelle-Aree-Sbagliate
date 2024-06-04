@@ -477,7 +477,6 @@ Sub ReadObj() Static
 
               Poke 646,3
               Print ""
-              Print "  rimetti la lettera al suo posto."
               Print "  dopo aver letto la lettera, realizzi"
               Print "  che la stanchezza sta prevalendo e"
               Print "  decidi di andare a dormire..."
@@ -485,8 +484,6 @@ Sub ReadObj() Static
               Print "  tua stanza."
               position = 11
               letterRead = 1
-              objects(5) = inventory(idx)
-              inventory(idx) = ""
               Exit For
            End If
        Next
@@ -1584,6 +1581,11 @@ End Sub
 ' -------------------------------------------------------------
 
 Sub Init() Static
+   For idx As byte = 0 To maxObjects
+       objects(idx) = ""
+       inventory(idx) = ""
+   Next
+
    rooms(0) = "ufficio "
    rooms(1) = "corridoio "
    rooms(2) = "finestra "
@@ -1634,6 +1636,8 @@ Sub Init() Static
    objects(7) = "biglietto"
    objects(8) = "piccola chiave"
    objects(9) = "post-it"
+
+   position = 0
 
    Print CHR$(147): Poke 53281,0: Poke 53280,0
    Poke 646, 10: Print "          nelle aree sbagliate"
