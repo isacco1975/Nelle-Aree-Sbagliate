@@ -30,7 +30,7 @@ Const maxObjects As Byte = 19
 
 ' **** PROCEDURE DIVISION
 ' -------------------------------------------------------------
-Sub CheckBadWords(verb As string*10) Static
+Sub CheckBadWords(verb As string*30) Static
     If verb = "stronzo" _
     Or verb = "vaffanculo" _
     Or verb = "idiota" _
@@ -477,12 +477,7 @@ Sub ReadObj() Static
 
               Poke 646,3
               Print ""
-              Print "  dopo aver letto la lettera, realizzi"
-              Print "  che la stanchezza sta prevalendo e"
-              Print "  decidi di andare a dormire..."
-              Print "  rimetti la lettera al suo posto,"
-              Print "  ti concedi un breve riposo."
-              position = 11
+              Print "  hai letto la lettera."
               letterRead = 1
               objects(5) = inventory(idx)
               inventory(idx) = ""
@@ -1367,7 +1362,7 @@ End Sub
 
 Sub Start() Static
    mailBoxOpen = 0
-   Dim verb As String*10, comb As String*5: verb = "": comb = ""
+   Dim verb As String*30, comb As String*5: verb = "": comb = ""
    'position = 20 'TODO REMOVE
 
    Do While 1
